@@ -1,0 +1,56 @@
+<div data-role="page" id="Pageorder" ng-controller="orderCtrl">
+  <div data-role="header">
+    <h1></h1>
+    <a href="#" data-rel="back" data-icon="back" data-iconpos="notext">后退</a>
+    <a href="#popup-login" data-rel="popup" data-icon="user" data-iconpos="notext" data-position-to="window">登录</a>
+
+    <div id="popup-login" data-role="popup" data-overlay-theme="b" style="min-width: 30em;">
+      <div data-role="header">
+        <h1>用户登录</h1>
+      </div>
+      <div class="ui-content">
+        <form>
+          <label for="uname">用户名：</label>
+          <input type="text" id="uname"/>
+          <label for="upwd">密码：</label>
+          <input type="password" id="upwd"/>
+          <input type="button" value="提交"/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="ui-content">
+    <div class="ui-body ui-body-a ui-corner-all">
+      <form ng-hide="succMsg || errMsg">
+        <label for="user_name">联系人：</label>
+        <input ng-model="order.user_name" type="text" id="user_name"/>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>性别：</legend>
+          <label>
+            <input ng-model="order.sex" type="radio" name="sex" value="1"/>男
+          </label>
+          <label>
+            <input ng-model="order.sex" type="radio" name="sex" value="2"/>女
+          </label>
+        </fieldset>
+        <label for="phone">联系电话：</label>
+        <input type="text" id="phone" ng-model="order.phone"/>
+
+        <label for="addr">送餐地址：</label>
+        <textarea ng-model="order.addr" id="addr" cols="30" rows="10"></textarea>
+        <a  class="ui-btn ui-btn-corner-all" ng-click="submitOrder()" href="myorder.html" data-transition="fade" style="background:#5cb85c;color:#fff;">确认下单</a>
+      </form>
+      <div class="alert alert-danger" ng-show="errMsg">{{errMsg}}</div>
+      <div class="alert alert-success" ng-show="succMsg">{{succMsg}}</div>
+    </div>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="index.html" data-icon="home"></a></li>
+        <li><a href="#" data-icon="user"></a></li>
+        <li><a href="#" data-icon="bullets"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

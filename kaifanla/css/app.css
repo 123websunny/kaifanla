@@ -1,0 +1,71 @@
+* {
+  font-family: "Comic Sans MS", sans-serif;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+#pageStart {
+  display: table;
+}
+#pageStart .ui-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#pageStart .ui-content h1 {
+  margin: 0;
+}
+
+#pageStart .ui-content a {
+  font-size: 2.5em;
+  text-decoration: none;
+}
+
+#pageStart .ui-content img {
+  max-width: 100%;
+}
+#pageMain .ui-content img{
+  top:20px;left:10px;
+  border-radius: 5px;
+}
+#pageMain .ui-content button{
+  background-color: #5cb85c;
+  color:#ffe;
+}
+#pageMain .ui-content .alert{
+  background-color:#f0ad4e;
+  padding:20px;
+  color:#fee;
+}
+#pageDetail .ui-content h5{
+  background: #eee;
+  padding:10px;
+}
+#pageDetail .ui-content .ui-body{
+  background: #eee;
+  padding:10px;
+}
+#pageDetail .ui-content .ui-footer{
+  overflow:hidden;
+  border:none;
+  background-color:#eee;
+  margin-top:20px;
+}
+#pageDetail .ui-content .ui-footer button{
+  float:right;
+  background: #f0ad4e;
+  color:#fee;
+}
+#pageDetail .ui-content .ui-footer a{
+  float:right;
+  margin-right:10px;
+  background-color:#5cb85c;
+  color:#fff;
+}
+.mask{
+  position:absolute;
+  top:0;
+  left:0;
+
+}

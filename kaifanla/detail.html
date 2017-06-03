@@ -1,0 +1,36 @@
+<div data-role="page" id="pageDetail" ng-controller="detailCtrl">
+  <div data-role="header">
+    <h1></h1>
+    <a href="#" data-rel="back" data-icon="back" data-iconpos="notext">后退</a>
+    <a href="#popup-login" data-rel="popup" data-icon="user" data-iconpos="notext" data-position-to="window">登录</a>
+  </div>
+  <div class="ui-content">
+    <div class="ui-body ui-body-a ui-corner-all">
+      <h5 class="ui-body ui-body-a ui-corner-all">
+        <a href="index.html">首页</a> / 详情</h5>
+      <h2>{{dish[0].name}}</h2>
+      <hr/>
+      <br/>
+      <div class="ui-body ui-body-a ui-corner-all">
+      <img style="max-width:100%;" src="img/{{dish[0].img_lg}}"/>
+        <h4>主要原材料：</h4>{{dish[0].material}}
+        <p>{{dish[0].detail}}</p>
+        <p style="color:#e4393c;">{{dish[0].price| currency : '￥'}}</p>
+      </div>
+      <div class="ui-footer ui-corner-all">
+        <button type="button">我再看看</button>
+        <a class="ui-btn ui-btn-a" href="order.html">我要订单</a>
+      </div>
+    </div>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="index.html" data-icon="home"></a></li>
+        <li><a href="#" data-icon="user"></a></li>
+        <li><a href="#" data-icon="bullets"></a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>

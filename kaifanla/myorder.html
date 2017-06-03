@@ -1,0 +1,37 @@
+<div data-role="page" id="PageMyorder" ng-controller="myorderCtrl">
+  <div data-role="header">
+    <h1>我的订单</h1>
+    <a href="#" data-rel="back" data-icon="back" data-iconpos="notext">后退</a>
+    <a href="#popup-login" data-rel="popup" data-icon="user" data-iconpos="notext" data-position-to="window">登录</a>
+  </div>
+  <div class="ui-content">
+    <table data-role="table" data-mode="columntoggle" data-colum-btn-text="请选择要显示的列" class="ui-responsive" style="border:1px solid #eee;">
+      <thead>
+      <tr>
+        <th data-priority="6">编号</th>
+        <th>菜品</th>
+        <th data-priority="5">下单时间</th>
+        <th data-priority="4">联系人</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr  ng-repeat="o in orderList" style="border:1px solid #eee;border-right:none;border-left:none;">
+          <td>{{o.oid}}</td>
+          <td style="vertical-align: middle">
+            <a href="#/detail/{{o.did}}"><img ng-src="img/{{o.img_sm}}" width="80"/></a></td>
+          <td>{{o.order_time | date :'yyyy-MM-dd HH:mm'}}</td>
+          <td>{{o.user_name}}</td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="index.html" data-icon="home" data-transition="fade"></a></li>
+        <li><a href="#" data-icon="user"></a></li>
+        <li><a href="#" data-icon="bullets"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

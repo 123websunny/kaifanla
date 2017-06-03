@@ -1,0 +1,56 @@
+<div data-role="page" id="pageMain" ng-controller="mainCtrl">
+  <div data-role="header">
+    <h1></h1>
+    <a href="#" data-rel="back" data-icon="back" data-iconpos="notext">后退</a>
+    <a href="#popup-login" data-rel="popup" data-icon="user" data-iconpos="notext" data-position-to="window">登录</a>
+
+    <div id="popup-login" data-role="popup" data-overlay-theme="b" style="min-width: 30em;">
+      <div data-role="header">
+        <h1>用户登录</h1>
+      </div>
+      <div class="ui-content">
+        <form>
+          <label for="uname">用户名：</label>
+          <input type="text" id="uname"/>
+          <label for="upwd">密码：</label>
+          <input type="password" id="upwd"/>
+          <input type="button" value="提交"/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="ui-content">
+    <form>
+      <label class="ui-hidden-accessible" for="kw">搜索菜品名称和原料</label>
+      <input type="search" id="kw" placeholder="搜索菜品名称和原料"/>
+    </form>
+    <div>
+      <ul data-role="listview" data-inset="true">
+        <li ng-repeat="d in dishList">
+          <a href="javascript:void(0)" data-transition="fade" ng-click="jump2Detail(d.did)" >
+            <img ng-cilck="showImgLg(d.img_lg)" ng-src="img/{{d.img_sm}}"/>
+            <h3>{{d.name}}</h3>
+            <p>原料：{{d.material}}</p>
+            <p style="color:#e4393c;">{{d.price|currency : '￥'}}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button ng-show="hasMore" ng-click="loadMore()" class="btn btn-success btn-block">加载更多</button>
+  <div ng-hide="hasMore" class="alert alert-danger">
+    已经没有更多数据可供加载了！
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" data-icon="home"></a></li>
+        <li><a href="#" data-icon="user"></a></li>
+        <li><a href="#" data-icon="bullets"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mask" ng-show="showMask" ng-click="hideMask">
+    <img src="img/{{imgLgSrc}}" alt=""/>
+  </div>
+</div>
